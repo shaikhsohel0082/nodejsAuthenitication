@@ -1,15 +1,16 @@
-const passport = require('passport');
-const googleStrategy = require('passport-google-oauth').OAuth2Strategy;
-const crypto = require('crypto');
-const User = require('../models/user');
+const passport = require("passport");
+const googleStrategy = require("passport-google-oauth").OAuth2Strategy;
+const crypto = require("crypto");
+const User = require("../models/user");
 
 //---- tell passport to use new strategy for google login
 passport.use(
   new googleStrategy(
     {
       //----enter all google auth details
-      clientID: process.env.emailid,
-      clientSecret: process.env.pass,
+      clientID: "TdpfaiZdsyiJXlysyrEhOmvfdjGDSPj4",
+      clientSecret:
+        "yvrjjSnD2a1wWeRLYlAdqYZCJKBHZxM3yWw5KOrJSKQVz2bmcFMCkweCyuOE2BTe",
       callbackURL: "http://localhost:3500/users/auth/google/callback",
     },
     //---- refreshToken=> automatically generate token if older expire
@@ -53,4 +54,4 @@ passport.use(
   )
 );
 
-module.exports= passport;
+module.exports = passport;

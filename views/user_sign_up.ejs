@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="/css/common.css" />
-<script src="https://www.google.com/recaptcha/api.js?render=reCAPTCHA_site_key"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY"></script>
 
 <form action="/users/create" class="signin-form" id="verify-form" method="POST">
   <h1>Sign-Up</h1>
@@ -50,6 +50,9 @@
       required
     />
   </div>
+  <!-- Add the reCAPTCHA widget here -->
+  <div class="g-recaptcha" data-sitekey="6LdM3ZopAAAAAJdycJXhv2myBOrc5dy5bI9sIWKk" data-callback="runVerify"></div> <!-- Replace YOUR_SITE_KEY with your actual reCAPTCHA site key -->
+  <br/>
   <button type="submit" class="btn btn-primary">Sign-Up</button>
 </form>
 
