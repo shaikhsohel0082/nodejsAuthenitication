@@ -1,38 +1,42 @@
 let runVerify = async function (e) {
-  //--- stop default submit action
+  // Prevent default form submission
   e.preventDefault();
 
-  //---- create a captcha token from Google reCAPTCHA
-  const captchaToken = await grecaptcha.execute(
-    "6LdM3ZopAAAAAJdycJXhv2myBOrc5dy5bI9sIWKk", // Replace YOUR_SITE_KEY with your actual Google reCAPTCHA site key
-    { action: "homepage" }
-  );
+  // Check if reCAPTCHA was successfully completed
+  if (grecaptcha && grecaptcha.getResponse()) {
+    // Get the reCAPTCHA response token
+    const captchaToken = grecaptcha.getResponse();
 
-  console.log(captchaToken);
+    // Send the token to server for validation
+    let response = await fetch("/users/captchaValidate", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ captcha: captchaToken }),
+    });
 
-  //---- checking the authentication of the captcha
-  let response = await fetch("/users/captchaValidate", {
-    method: "POST",
-    headers: {
-      Accept: "application/json, text/plain, */*",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ captcha: captchaToken }),
-  });
+    let data = await response.json();
 
-  let data = await response.json();
-
-  if (data.success) {
-    document.getElementById("verify-form").submit();
+    if (data.success) {
+      // If captcha validation is successful, submit the form
+      document.getElementById("verify-form").submit();
+    } else {
+      // If captcha validation fails, display an error message
+      new Noty({
+        theme: "relax",
+        text: "Captcha Failed, try again! ",
+        type: "error",
+        layout: "topRight",
+        timeout: 1500,
+      }).show();
+    }
   } else {
-    //alert("Captcha Failed, try again");
-    new Noty({
-      theme: "relax",
-      text: "Captcha Failed, try again! ",
-      type: "error",
-      layout: "topRight",
-      timeout: 1500,
-    }).show();
+    // If reCAPTCHA was not completed, prompt the user to complete it
+    alert("Please complete the reCAPTCHA verification.");
   }
 };
+
+// Attach the form submission handler to the form
 document.getElementById("verify-form").addEventListener("submit", runVerify);

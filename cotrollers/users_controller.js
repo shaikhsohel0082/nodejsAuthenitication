@@ -158,35 +158,78 @@ module.exports.resetMail = async function (req, res) {
 };
 
 //---- Validate captcha
+const request = require("request"); // Ensure you have installed the 'request' package
+
 module.exports.captchaValidate = function (req, res) {
+  const secretKey = "YOUR_RECAPTCHA_SECRET_KEY"; // Replace 'YOUR_RECAPTCHA_SECRET_KEY' with your actual reCAPTCHA secret key
+
   if (!req.body.captcha) {
-    return res.json({ success: false, msg: "Invalid Capthca" });
+    return res.json({ success: false, msg: "Invalid Captcha" });
   }
 
   const Url = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.captcha}`;
 
   request(Url, (err, response, body) => {
-    //---- if url not match
+    // If there's an error in the request
     if (err) {
       console.log(err);
+      return res.json({ success: false, msg: "Error validating captcha" });
     }
 
+    // Parse the JSON response body
     body = JSON.parse(body);
     console.log("Captcha Status:", body);
-    if (!body.success && body.success === undefined) {
-      return res.json({ success: false, msg: "captcha verification failed" });
-    } else if (body.score < 0.5) {
-      // 0.5= By default, threshold
+
+    // Check if captcha verification was successful
+    if (body.success) {
+      return res.json({
+        success: true,
+        msg: "Captcha verification passed",
+      });
+    } else {
+      // If captcha verification failed
       return res.json({
         success: false,
-        msg: "you might be a bot, sorry!",
-        score: body.score,
+        msg: "Captcha verification failed",
       });
     }
-    return res.json({
-      success: true,
-      msg: "captcha verification passed",
-      score: body.score,
-    });
   });
 };
+const request = require("request"); // Ensure you have installed the 'request' package
+
+module.exports.captchaValidate = function (req, res) {
+  const secretKey = "YOUR_RECAPTCHA_SECRET_KEY"; // Replace 'YOUR_RECAPTCHA_SECRET_KEY' with your actual reCAPTCHA secret key
+
+  if (!req.body.captcha) {
+    return res.json({ success: false, msg: "Invalid Captcha" });
+  }
+
+  const Url = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.captcha}`;
+
+  request(Url, (err, response, body) => {
+    // If there's an error in the request
+    if (err) {
+      console.log(err);
+      return res.json({ success: false, msg: "Error validating captcha" });
+    }
+
+    // Parse the JSON response body
+    body = JSON.parse(body);
+    console.log("Captcha Status:", body);
+
+    // Check if captcha verification was successful
+    if (body.success) {
+      return res.json({
+        success: true,
+        msg: "Captcha verification passed",
+      });
+    } else {
+      // If captcha verification failed
+      return res.json({
+        success: false,
+        msg: "Captcha verification failed",
+      });
+    }
+  });
+};
+
