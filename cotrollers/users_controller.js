@@ -195,10 +195,8 @@ module.exports.captchaValidate = function (req, res) {
     }
   });
 };
-const request = require("request"); // Ensure you have installed the 'request' package
 
 module.exports.captchaValidate = function (req, res) {
-  const secretKey = "YOUR_RECAPTCHA_SECRET_KEY"; // Replace 'YOUR_RECAPTCHA_SECRET_KEY' with your actual reCAPTCHA secret key
 
   if (!req.body.captcha) {
     return res.json({ success: false, msg: "Invalid Captcha" });
