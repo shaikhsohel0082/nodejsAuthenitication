@@ -43,9 +43,20 @@ img {
     width: 30px;
 }
 
-#divstyle {
-    height: 70%;
-    width: 50%;
-    margin: auto;
-    margin-top: 50px;
+
+
+.googlebtn {
+    height: 50px;
+    width: 200px;
+    border: 2px solid gray;
+    border-radius: 10px 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    margin-left: 37%;
+
+}
+
+.googlebtn a {
+    text-decoration: none;
 }

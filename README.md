@@ -60,6 +60,10 @@ A complete authentication system which can be used as a starter code for creatin
 - Routes: It contains all routes.
 - Views: It contins all file which render UI to browser.
 
+## Note:
+
+Captcha verification(I am Not Robot) will not work on LoacalHost.
+
 ## Getting Started
 
 1. Clone the project.

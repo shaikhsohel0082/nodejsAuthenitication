@@ -1,30 +1,51 @@
-<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/css/common.css" />
 
 <form action="/users/reset/<%= user.id%>" class="signin-form" method="POST">
-    <h1>Change Password: </h1>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Current Password</label>
-        <input type="password" name="current_password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
-      </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">New Password</label>
-      <input type="password" name="new_password" class="form-control" id="exampleInputPassword1" placeholder="New Password" required>
-    </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Confirm Password</label>
-        <input type="password" name="confirm_password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Reset</button>
+  <h1>Change Password:</h1>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Current Password</label>
+    <input
+      type="password"
+      name="current_password"
+      class="form-control"
+      id="exampleInputPassword1"
+      placeholder="Password"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">New Password</label>
+    <input
+      type="password"
+      name="new_password"
+      class="form-control"
+      id="exampleInputPassword1"
+      placeholder="New Password"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Confirm Password</label>
+    <input
+      type="password"
+      name="confirm_password"
+      class="form-control"
+      id="exampleInputPassword1"
+      placeholder="Confirm Password"
+      required
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Reset</button>
 </form>
 
 <div class="break">
-  <hr id="onee">
+  <hr id="onee" />
   <span>OR</span>
-  <hr id="onee">
+  <hr id="onee" />
 </div>
 
-<div class="google-auth">
-  <a href="/users/forgot-password">
-    <img src="/images/google.png">
-  </a>
+<div class="google-auth googlebtn">
+  <a href="/users/auth/google"
+    ><img src="/images/google.png" />&ensp; Continue with this</a
+  >
 </div>
