@@ -1,16 +1,26 @@
-<!-- <link rel="stylesheet" href="/css/home.css"> -->
+<link rel="stylesheet" href="/css/home.css" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
 <% if(locals.user) {%>
-    <div class="container">
-        <h1> Hellow! <span> <%= user.name %> </span> </h1>
-        <h1>This is your home page</h1>
-        <h3>To Reset password check top right corner.</h3>
-    </div>
-    
+<div class="container">
+  <h1>Hellow! <span> <%= user.name %> </span></h1>
+  <h1>This is your home page</h1>
+  <h3>To Reset password check top right corner.</h3>
+</div>
+
 <% } else {%>
-    <div class="container">
-        <h1 id="heading">Home page</h1>
-        <h2>A complete authentication system which can be used as a starter code for creating any
-            new application. </h2>
-    </div>
-    
+<div id="mainHome" class="container">
+  <div id="home-heading"><h1>Home page</h1></div>
+  <div id="main-para">
+    <h1
+      class="animate__animated animate__flash animate__infinite infinite"
+    >
+      A complete authentication system which can be used as a starter code for
+      creating any new application.
+    </h1>
+  </div>
+</div>
+
 <%}%>

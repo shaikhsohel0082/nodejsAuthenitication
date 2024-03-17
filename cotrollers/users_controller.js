@@ -6,7 +6,7 @@ const welcomeMailer = require("../mailers/welcome_mailer");
 
 //---- use to encryption
 const crypto = require("crypto");
-// const request = require("request");
+const request = require("request");
 // const { request } = require('http');
 
 //---- seceret key for capche

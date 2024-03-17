@@ -8,7 +8,7 @@ A complete authentication system which can be used as a starter code for creatin
 
 - A simple page contain signin and signup button.
 
-  ![Homepage](/assets/images/home.JPG)
+  ![Homepage](/assets/images/a/home.png)
 
 `Sign-Up:`
 
@@ -18,7 +18,7 @@ A complete authentication system which can be used as a starter code for creatin
 - User also get Welcom mail from us.
 - Google reChapcha V3 is also use here.
 
-  ![Homepage](/assets/images/signup.JPG)
+  ![Sign-Up](/assets/images/a/signup.png)
 
 `Sign-In:`
 
@@ -26,12 +26,12 @@ A complete authentication system which can be used as a starter code for creatin
 - User can sign in using Google.
 - Google reChapcha V3 is also use here.
 
-  ![Sign-In](/assets/images/signin.JPG)
+  ![Sign-In](/assets/images/a/signin.png)
 
 - If user forget password he can use his email to get new password.
 - Mail is send to the verified user which contains a random password which he/she can use to reset password.
 
-  ![forgot pass](/assets/images/forgetpass.JPG)
+  ![forgot pass](/assets/images/a/forgetpassword.png)
 
 `Profile:`
 

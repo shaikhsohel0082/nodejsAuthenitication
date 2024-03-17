@@ -1,0 +1,21 @@
+#mainHome {
+    margin-top: -1px;
+    height: 100vh;
+    width: 100vw;
+    background: url('https://a.storyblok.com/f/80044/525x329/b2a11b66dc/01.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    opacity: 0.8;
+
+}
+
+#home-heading {
+    position: absolute;
+    top: 70px;
+    left: 40%;
+}
+
+#main-para {
+    color: rgba(251, 255, 0, 0.833);
+}
