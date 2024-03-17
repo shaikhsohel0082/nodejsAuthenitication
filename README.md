@@ -85,4 +85,8 @@ Captcha verification(I am Not Robot) will not work on LoacalHost.
    clientSecret=GoogleSecretKey
    ```
 9. Run command: `npm start` OR ` node index.js`
-10. Go to https://localhost/3500 to use the application.
+10. Go to https://localhost/3500 
+  OR
+  https://nodejsauthenitication.onrender.com
+
+to use the application.
