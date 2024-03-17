@@ -10,7 +10,7 @@ const request = require("request");
 // const { request } = require('http');
 
 //---- seceret key for capche
-const secretKey = "6LdM3ZopAAAAAD3yRZTBNAQiwUT7duNeIPu8DpWl"; //secrey key
+const secretKey = "YOUR_SECRET_KEY"; //secrey key
 
 //---- display user profile
 module.exports.profile = function (req, res) {
