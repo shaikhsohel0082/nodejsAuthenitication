@@ -38,7 +38,7 @@ A complete authentication system which can be used as a starter code for creatin
 - After logn user redirect to his profile page.
 - Simple page welcome user.
 
-  ![Homepage](/assets/images/profile.JPG)
+  ![Homepage](/assets/images/a/profile.png)
 
 `Reset-Password:`
 
@@ -46,7 +46,7 @@ A complete authentication system which can be used as a starter code for creatin
 - Mail is send to the verified user which contains a random password which he/she can use to reset password.
 - User can also rest his password using google.
 
-  ![Homepage](/assets/images/changepass.JPG)
+  ![Homepage](/assets/images/a/resetpassword.png)
 
 ## Folder Structure
 
@@ -77,9 +77,12 @@ Captcha verification(I am Not Robot) will not work on LoacalHost.
 6. Give your mail credentials in `config > nodemailer`
 7. Also change google reChapcha site key and seceret key.
 8. Set Environment Variables by creating .env file
-   ```emailid="youremailId"
-    pass="PaassKey"
-    MONGO_URL="mongoDB_connection_String"
+   ```
+   emailid=YourEmailID
+   pass=Password
+   MONGO_URL=AtlasMongoUrl
+   clientID=GoogleClientID
+   clientSecret=GoogleSecretKey
    ```
 9. Run command: `npm start` OR ` node index.js`
 10. Go to https://localhost/3500 to use the application.
